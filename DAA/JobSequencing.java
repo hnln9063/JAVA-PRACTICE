@@ -28,7 +28,7 @@ public class JobSequencing {
 		for(int i=0;i<n-1;i++) {
 			for(int j = i+1;j<n;j++) {
 				if(b[i]<b[j]) {
-					int temp = c[i];
+					int temp = b[i];
 					b[i] = b[j];
 					b[j] = temp;
 					temp = c[i];
