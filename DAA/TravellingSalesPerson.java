@@ -14,6 +14,7 @@ public class TravellingSalesPerson {
         int n = sc.nextInt();        
         if(n==1) {
             System.out.println("Path is not possible!");
+		return;
         }
         System.out.println("Enter the Cost Matrix:");
         for(i=1;i<=n;i++) {
