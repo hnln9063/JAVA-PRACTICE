@@ -26,11 +26,18 @@ public class NQueensAllSolutions {
 	}
 
 	private static void printSolution(char[][] mat) {
-		for (char[] chars: mat) {
-			System.out.println(Arrays.toString(chars).replaceAll(",", ""));
+		int arr[] = new int[mat.length];
+		for (int i=0;i<mat.length;i++) {
+			for(int j=0;j<mat.length;j++) {
+				if(mat[i][j] == 'Q') {
+					arr[i] = j;
+				}
+			}
+		}
+		for(int i=0;i<mat.length;i++) {
+			System.out.print( (arr[i]+1)+" ");
 		}
 		System.out.println();
-
 		count++;
 	}
 
