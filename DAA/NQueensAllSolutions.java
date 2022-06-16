@@ -72,15 +72,7 @@ public class NQueensAllSolutions {
 OUTPUT:
 ------
 Enter number of Queens : 4
-[– Q – –]
-[– – – Q]
-[Q – – –]
-[– – Q –]
-
-[– – Q –]
-[Q – – –]
-[– – – Q]
-[– Q – –]
-
+2 4 1 3
+3 1 4 2
 Total Solutions : 2
 */
