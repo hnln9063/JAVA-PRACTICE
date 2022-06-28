@@ -1,9 +1,9 @@
+//Travelling Sales Person Problem using Branch and Bound
+
 import java.util.*;
 
-class BnBTSP
-{
+class BnBTSP {
         static int n=5;
-
         static int final_path[]=new int[n+1];
         static boolean visited[]=new boolean[n];
         static int final_cost=Integer.MAX_VALUE;
@@ -24,17 +24,15 @@ class BnBTSP
 
         static int secondMin(int adj[][],int i) {
                 int first=Integer.MAX_VALUE,second=Integer.MAX_VALUE;
-                for (int j=0; j<n; j++)
-                {
+                for (int j=0; j<n; j++) {
                         if (i == j)
                                 continue;
-                        if (adj[i][j] <= first)
-                        {
+                        if (adj[i][j] <= first) {
                                 second=first;
                                 first=adj[i][j];
-                        }
-                        else if(adj[i][j]<=second && adj[i][j]!=first)
+                        } else if(adj[i][j]<=second && adj[i][j]!=first) {
                                 second=adj[i][j];
+                        }
                 }
                 return second;
         }
@@ -57,7 +55,6 @@ class BnBTSP
                                 curr_weight+=adj[curr_path[level-1]][i];
                                 if(level==1) {
                                         curr_bound-=((firstMin(adj, curr_path[level-1])+firstMin(adj,i))/2);
-                                        System.out.println(curr_bound);
                                 }
                                 else
                                         curr_bound-=((secondMin(adj, curr_path[level-1])+firstMin(adj,i))/2);
@@ -93,7 +90,7 @@ class BnBTSP
         public static void main(String[] args)  {
                 Scanner sc=new Scanner(System.in);
                 int n,i,j;
-                System.out.println("Enter Number of cities:");
+                System.out.print("Enter Number of cities: ");
                 n=sc.nextInt();
                 int adj[][]=new int[n+1][n+1];
                 System.out.println("Enter the adjascency matrix:");
@@ -110,3 +107,17 @@ class BnBTSP
 
         }
 }
+
+/*
+OUTPUT:
+------
+Enter Number of cities: 5
+Enter the adjascency matrix:
+0 20 30 10 11
+15 0 16 4 2
+3 5 0 2 4
+19 6 18 0 3
+16 4 7 16 0
+Minimum cost:28
+The Path is:
+ 0 3 1 4 2
