@@ -121,3 +121,4 @@ Enter the adjascency matrix:
 Minimum cost:28
 The Path is:
  0 3 1 4 2
+*/
